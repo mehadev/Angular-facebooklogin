@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FacebookLoginProvider, SocialAuthService } from "angularx-social-login";
+import { FacebookLoginProvider, SocialAuthService,GoogleLoginProvider } from "angularx-social-login";
 import { SocialUser } from "angularx-social-login";
 @Component({
   selector: 'app-root',
@@ -12,8 +12,10 @@ export class AppComponent {
   loggedIn: boolean;
 
   constructor(private authService: SocialAuthService) { }
-  signInWithFB(): void {
-    this.authService.signIn(FacebookLoginProvider.PROVIDER_ID);
+ 
+  signInWithGoogle(): void {
+    console.log("google");
+    this.authService.signIn(GoogleLoginProvider.PROVIDER_ID);
   }
  
   signOut(): void {
